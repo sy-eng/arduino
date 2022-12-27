@@ -24,10 +24,12 @@
 //A6  : NC
 //A7  : NC
 
+// With 12 servos, the control cycle will be 30ms.
+// This is longer than 20ms the servo requires.
+// But usually, this does not matters.
 Servo servo[12];
 
 void setup() {
-  // put your setup code here, to run once:
 
   pinMode(2, OUTPUT);
 
@@ -53,11 +55,11 @@ void setup() {
   servo[4].attach(12);
   servo[5].attach(13);
   servo[6].attach(14);
-//  servo[7].attach(15);
-//  servo[8].attach(16);
-//  servo[9].attach(17);
-//  servo[10].attach(18);
-//  servo[11].attach(19);
+  servo[7].attach(15);
+  servo[8].attach(16);
+  servo[9].attach(17);
+  servo[10].attach(18);
+  servo[11].attach(19);
 
   servo[0].write(180);
   servo[1].write(180);
@@ -66,11 +68,11 @@ void setup() {
   servo[4].write(180);
   servo[5].write(180);
   servo[6].write(180);
-//  servo[7].write(180);
-//  servo[8].write(180);
-//  servo[9].write(180);
-//  servo[10].write(180);
-//  servo[11].write(180);
+  servo[7].write(180);
+  servo[8].write(180);
+  servo[9].write(180);
+  servo[10].write(180);
+  servo[11].write(180);
 }
 
 void loop() {

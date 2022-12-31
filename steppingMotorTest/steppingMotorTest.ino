@@ -182,6 +182,11 @@ void setMode(char mode){
     //Serial.write('L');
     digitalWrite(MODE0, LOW);
   }
+
+//  digitalWrite(RESET, HIGH);
+//  delay(10);
+//  digitalWrite(RESET, LOW);
+
 }
 
 void updownMode(int updown){
@@ -225,8 +230,8 @@ void setup() {
   digitalWrite(CLK, LOW);
   digitalWrite(CWCCW, CW);
 
-  // SET GAIN 1/5
-  digitalWrite(GAIN_SEL, LOW);
+  // SET GAIN 1/10
+  digitalWrite(GAIN_SEL, HIGH);
   // SET CLK MODE
   digitalWrite(IF_SEL, LOW);
 
@@ -236,9 +241,13 @@ void setup() {
   digitalWrite(MODE2, LOW);
 
   // SET TORQUE 100%
-  digitalWrite(TORQE0, LOW);
-  digitalWrite(TORQE1, LOW);
-  digitalWrite(TORQE2, LOW);
+  // SET TORQUE AND GAIN_SEL COLLECTLY, OR VOLTAGE WILL SATULATE!
+//  digitalWrite(TORQE0, LOW);
+//  digitalWrite(TORQE1, LOW);
+//  digitalWrite(TORQE2, LOW);
+  digitalWrite(TORQE0, HIGH);
+  digitalWrite(TORQE1, HIGH);
+  digitalWrite(TORQE2, HIGH);
   // FAST DECAY 37.5%
   digitalWrite(MDT0, LOW);
   digitalWrite(MDT1, LOW);
